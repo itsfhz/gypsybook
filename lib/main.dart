@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gypsybook/homePage.dart';
 import 'package:gypsybook/providers/world.dart';
-import 'package:gypsybook/screens/add_product_screen.dart';
+import 'package:gypsybook/screens/add_continent_screen.dart';
+import 'package:gypsybook/screens/add_country_screen.dart';
+import 'package:gypsybook/screens/continent_description.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -26,7 +28,10 @@ class MyApp extends StatelessWidget {
         ),
         home: const HomePage(),
         routes: {
-          EditProductScreen.routeName: (ctx) => EditProductScreen(),
+       EditCountryScreen.routeName:(context) => EditCountryScreen(),
+           ContinentDescription.routeName: (ctx) => ContinentDescription(),
+          EditContinentScreen.routeName: (ctx) => EditContinentScreen(),
+
         },
       ),
     );

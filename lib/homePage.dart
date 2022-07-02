@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gypsybook/providers/world.dart';
-import 'package:gypsybook/screens/add_product_screen.dart';
-import 'package:gypsybook/widgets/products_grid.dart';
+import 'package:gypsybook/screens/add_continent_screen.dart';
+import 'package:gypsybook/widgets/continent_page.dart';
 import 'package:provider/provider.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,14 +42,14 @@ class _HomePageState extends State<HomePage> {
         actions: [
           IconButton(
               onPressed: () {
-                Navigator.of(context).pushNamed(EditProductScreen.routeName);
+                Navigator.of(context).pushNamed(EditContinentScreen.routeName);
               },
               icon: const Icon(Icons.add)),
         ],
       ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
-          : ProductsGrid(),
+          : ContinentPage(),
     );
   }
 }

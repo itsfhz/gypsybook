@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:gypsybook/models/country_model.dart';
 import 'package:gypsybook/models/world_model.dart';
+import 'package:gypsybook/providers/country_provider.dart';
 import 'package:gypsybook/providers/world.dart';
 
 import 'package:provider/provider.dart';
 
-class EditProductScreen extends StatefulWidget {
-  static const routeName = '/edit-product';
+class EditCountryScreen extends StatefulWidget {
+  static const routeName = '/edit-country';
 
   @override
-  _EditProductScreenState createState() => _EditProductScreenState();
+  _EditCountryScreenState createState() => _EditCountryScreenState();
 }
 
-class _EditProductScreenState extends State<EditProductScreen> {
+class _EditCountryScreenState extends State<EditCountryScreen> {
   final _priceFocusNode = FocusNode();
   final _descriptionFocusNode = FocusNode();
   final _imageUrlController = TextEditingController();
   final titlecontroller = TextEditingController();
   final _imageUrlFocusNode = FocusNode();
   final _form = GlobalKey<FormState>();
-  var _editedProduct = World(
+  var _editedProduct = Country(
     id: null,
     title: '',
     //price: 0,
@@ -46,7 +48,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
       final productId = ModalRoute.of(context)!.settings.arguments as String?;
       if (productId != null) {
         _editedProduct =
-            Provider.of<Worlds>(context, listen: false).findById(productId);
+            Provider.of<CountryProvider>(context, listen: false).findById(productId);
         _initValues = {
           'title': _editedProduct.title!,
           'description': _editedProduct.description!,
@@ -95,8 +97,8 @@ class _EditProductScreenState extends State<EditProductScreen> {
     });
 
     try {
-      await Provider.of<Worlds>(context, listen: false)
-          .addContinent(_editedProduct);
+      await Provider.of<CountryProvider>(context, listen: false)
+          .addCountry(_editedProduct);
     } catch (error) {
       await showDialog(
         context: context,
@@ -126,7 +128,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Edit Product'),
+        title: Text('Edit Country'),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.save),
@@ -159,7 +161,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         return null;
                       },
                       onSaved: (value) {
-                        _editedProduct = World(
+                        _editedProduct = Country(
                           title: value,
                           //price: _editedProduct.price,
                           description: _editedProduct.description,
@@ -185,7 +187,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                         return null;
                       },
                       onSaved: (value) {
-                        _editedProduct = World(
+                        _editedProduct = Country(
                           title: _editedProduct.title,
                           //price: _editedProduct.price,
                           description: value,
@@ -246,7 +248,7 @@ class _EditProductScreenState extends State<EditProductScreen> {
                             //   //   return null;
                             // },
                             onSaved: (value) {
-                              _editedProduct = World(
+                              _editedProduct = Country(
                                 title: _editedProduct.title,
                                 //price: _editedProduct.price,
                                 description: _editedProduct.description,
