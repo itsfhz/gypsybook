@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "642215806918",
+    "firebase_url": "https://gypsybook-d665c-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gypsybook-d665c",
+    "storage_bucket": "gypsybook-d665c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642215806918:android:2dbbcd08f5002b3594d4c7",
+        "android_client_info": {
+          "package_name": "com.example.gypsybook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642215806918-7mqgsad75j88vessd6k1kqncd8rutqjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQ2-CwH1ZeX0OSqr1xET1AJsNuTTjqyOA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642215806918-7mqgsad75j88vessd6k1kqncd8rutqjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
